@@ -36,3 +36,53 @@
     transform: rotate(360deg);
   }
 }
+
+.bg{
+ background-image: url(./images/bg-l2.jpg);
+ background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  position: fixed;
+}
+.btn{
+  background-image: linear-gradient(to right, rgba(146,70,129,1), rgba(144,84,124,1), rgba(133,96,159,1) );
+  /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  /* CSS HEX */
+
+
+
+/* SCSS HEX */
+/* $lavender-purple: #b988bc;
+$carousel-pink: #f8deee;
+$affair: #6d4583;
+$illusion: #f1a4cf;
+$cannon-pink: #924681;
+$trendy-pink: #85609f;
+$thistle: #d4b3d3;
+$prelude: #dab8e4;
+$strikemaster: #90547c; */ 
+
+
+/* SCSS RGB */
+/* --lavender-purple: rgba(185,136,188,1);
+--carousel-pink: rgba(248,222,238,1);
+--affair: rgba(109,69,131,1);
+--illusion: rgba(241,164,207,1);
+--cannon-pink: rgba(146,70,129,1);
+--trendy-pink: rgba(133,96,159,1);
+--thistle: rgba(212,179,211,1);
+--prelude: rgba(218,184,228,1);
+--strikemaster: rgba(144,84,124,1); */
+
+
+
+}
+.btn:hover{
+  background-image: linear-gradient(to right, rgba(133,96,159,1), rgba(146,70,129,1), rgba(144,84,124,1) );
+}
+
+.input:focus{
+   outline: none;
+}

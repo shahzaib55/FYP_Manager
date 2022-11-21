@@ -38,13 +38,16 @@
 }
 
 .bg{
- background-image: url(./images/bg-l2.jpg);
+ background-image: url(./images/login_bg.jpg);
  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
   background-size: cover;
   position: fixed;
+    /* Add the blur effect */
+    /* filter: blur(2px);
+    -webkit-filter: blur(0px); */
 }
 .btn{
   background-image: linear-gradient(to right, rgba(146,70,129,1), rgba(144,84,124,1), rgba(133,96,159,1) );

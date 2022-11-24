@@ -37,27 +37,30 @@
   }
 }
 
-.bg{
- background-image: url(./images/login_bg.jpg);
- background-position: center;
+.bg {
+  background-image: url(./assets/images/login_bg.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
   height: auto;
   background-size: cover;
   position: fixed;
-    /* Add the blur effect */
-    /* filter: blur(2px);
+  /* Add the blur effect */
+  /* filter: blur(2px);
     -webkit-filter: blur(0px); */
 }
-.btn{
-  background-image: linear-gradient(to right, rgba(146,70,129,1), rgba(144,84,124,1), rgba(133,96,159,1) );
+.btn {
+  background-image: linear-gradient(
+    to right,
+    rgba(146, 70, 129, 1),
+    rgba(144, 84, 124, 1),
+    rgba(133, 96, 159, 1)
+  );
   /* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
   /* CSS HEX */
 
-
-
-/* SCSS HEX */
-/* $lavender-purple: #b988bc;
+  /* SCSS HEX */
+  /* $lavender-purple: #b988bc;
 $carousel-pink: #f8deee;
 $affair: #6d4583;
 $illusion: #f1a4cf;
@@ -65,11 +68,10 @@ $cannon-pink: #924681;
 $trendy-pink: #85609f;
 $thistle: #d4b3d3;
 $prelude: #dab8e4;
-$strikemaster: #90547c; */ 
+$strikemaster: #90547c; */
 
-
-/* SCSS RGB */
-/* --lavender-purple: rgba(185,136,188,1);
+  /* SCSS RGB */
+  /* --lavender-purple: rgba(185,136,188,1);
 --carousel-pink: rgba(248,222,238,1);
 --affair: rgba(109,69,131,1);
 --illusion: rgba(241,164,207,1);
@@ -78,14 +80,67 @@ $strikemaster: #90547c; */
 --thistle: rgba(212,179,211,1);
 --prelude: rgba(218,184,228,1);
 --strikemaster: rgba(144,84,124,1); */
-
-
-
 }
-.btn:hover{
-  background-image: linear-gradient(to right, rgba(133,96,159,1), rgba(146,70,129,1), rgba(144,84,124,1) );
+.btn:hover {
+  background-image: linear-gradient(
+    to right,
+    rgba(133, 96, 159, 1),
+    rgba(146, 70, 129, 1),
+    rgba(144, 84, 124, 1)
+  );
+}
+.input {
+}
+.input:focus {
+  /* background-color: aqua;
+  border-bottom: #f702c2; */
 }
 
-.input:focus{
-   outline: none;
+.sidebar_bg {
+  background: rgb(214, 161, 207);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 161, 207, 1) 0%,
+    rgba(144, 89, 153, 1) 17%
+  );
+}
+
+.sidebar_link {
+  color: #f8f5f8;
+}
+.sidebar_link_active {
+  color: #f8f5f8;
+  background: rgb(215, 206, 212);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 206, 212, 1) 0%,
+    rgba(191, 147, 177, 1) 33%,
+    rgba(186, 139, 176, 1) 100%,
+    rgba(182, 132, 175, 1) 100%,
+    rgba(182, 132, 175, 1) 100%,
+    rgba(148, 82, 165, 1) 100%
+  );
+}
+.sidebar_link:hover {
+  border-left-color:#d6a1cf;
+  background: rgb(215, 206, 212);
+  background: linear-gradient(
+    90deg,
+    rgba(215, 206, 212, 1) 0%,
+    rgba(191, 147, 177, 1) 33%,
+    rgba(186, 139, 176, 1) 100%,
+    rgba(182, 132, 175, 1) 100%,
+    rgba(182, 132, 175, 1) 100%,
+    rgba(148, 82, 165, 1) 100%
+  );
+
+
+  /* border-width: 4px; */
+}
+.d_heading {
+  color: #e5e4e4;
+}
+.sidebar_icon {
+  background-color: #a16ba6;
+  border: #905999;
 }

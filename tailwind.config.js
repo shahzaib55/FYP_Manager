@@ -2,7 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        lora: ["Lora", "serif"],
+        open: ["Open Sans", "sans-serif"],
+        // 'lora': ["'Lora', 'serif'"]
+      },
+    },
   },
-  plugins: [require('@tailwindcss/forms'),require('autoprefixer')],
-}
+  plugins: [require("@tailwindcss/forms"), require("autoprefixer")],
+};

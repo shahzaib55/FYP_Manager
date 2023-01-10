@@ -1,8 +1,8 @@
 import React from "react";
-import { Fragment } from 'react'
-import { Menu, Transition } from '@headlessui/react'
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 function Dropdown() {
   return (
@@ -30,7 +30,7 @@ function Dropdown() {
           <Menu.Item>
             {({ active }) => (
               <a
-                href="#"
+                href="profile"
                 className={classNames(
                   active ? "bg-gray-100" : "",
                   "block px-4 py-2 text-sm text-gray-700"
@@ -56,7 +56,7 @@ function Dropdown() {
           <Menu.Item>
             {({ active }) => (
               <a
-                href="#"
+                href="/login"
                 className={classNames(
                   active ? "bg-gray-100" : "",
                   "block px-4 py-2 text-sm text-gray-700"

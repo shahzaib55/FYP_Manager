@@ -1,17 +1,14 @@
 import React from "react";
 import Sidebar from "../components/sidebar";
 import Header from "../components/header";
-import MainBody from "../components/main";
-import Projects from "../components/projects";
-// import MainRout from "../components/Routes/mainRoute.js";
-import { Outlet } from "react-router-dom";
+import MainRout from "../Routes/mainRoute";
+import Breadcrumb from "../components/breadcrumbs";
 import "../App.css";
-import { MdOutlineDoNotDisturbOnTotalSilence } from "react-icons/md";
 export default function Dashboard() {
   return (
-    <>
+    <React.Fragment>
       <div className="flex h-screen bg-gray-100 ">
-        <sidebar className="h-screen  w-[18%] sidebar_bg">
+        <sidebar className="h-screen  w-[18%] sidebar_bg stick">
           <Sidebar />
         </sidebar>
         <div className="flex flex-col h-full w-[82%] items-center">
@@ -19,11 +16,11 @@ export default function Dashboard() {
             <Header />
           </header>
           <main className="w-full h-[91%] bg-gray-100">
-            <Projects />
+            {/* <Breadcrumb /> */}
+            <MainRout />
           </main>
         </div>
-
       </div>
-    </>
+    </React.Fragment>
   );
 }

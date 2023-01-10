@@ -16,85 +16,76 @@ const navigation = [
   { name: "Dashboard", path: "/", icon: <AiOutlineHome />, current: true },
   {
     name: "Projects",
-    path: "/projects",
-    icon: <AiOutlineFundProjectionScreen className="w-4 h-4"/>,
-    current: false,
+    path: "projects",
+    icon: <AiOutlineFundProjectionScreen className="w-4 h-4" />,
   },
   {
     name: "Supervisors",
-    path: "/supervisor",
+    path: "supervisor",
     icon: <MdOutlineSupervisorAccount />,
-    current: false,
   },
   {
     name: "Groups",
-    path: "/groups",
+    path: "groups",
     icon: <HiOutlineUserGroup />,
-    current: false,
   },
-  { name: "Students", path: "/students", icon: <BsPerson />, current: false },
-  { name: "Assignments", path: "/Taks", icon: <BiTask />, current: false },
+  { name: "Students", path: "students", icon: <BsPerson /> },
+  { name: "Assignments", path: "Tasks", icon: <BiTask /> },
   {
     name: "Announcement",
-    path: "/announcement",
+    path: "announcement",
     icon: <TfiAnnouncement />,
-    current: false,
   },
 ];
-// const navLinkStyle = ({ isActive }) => {
-//   return{
-//     background: isActive? 'bg-purple-500' : 'gray-500',
-//   }
-// }
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
-  const toggle = () => setIsOpen(!isOpen);
-  const [current, setcurrent] = useState(true);
-
   return (
-    <div className="flex flex-col ">
-      <div className="flex">
-        <div>
-          <img
-            className="mx-3 h-10 w-auto rounded-full my-3"
-            src={img}
-            alt="Your Company"
-          />
+    <React.Fragment>
+      <div className="flex flex-col ">
+        <div className="flex">
+          <div>
+            <img
+              className="mx-3 h-10 w-auto rounded-full my-3"
+              src={img}
+              alt="Your Company"
+            />
+          </div>
+          <div>
+            <h1 className="text-2xl my-4 mx-2 font-sans font-bold d_heading">
+              Dashboard
+            </h1>
+          </div>
         </div>
-        <div>
-          <h1 className="text-2xl my-4 mx-2 font-sans font-bold d_heading">
-            Dashboard
-          </h1>
-        </div>
-      </div>
-      <div className="flex flex-col relative mt-4 space-y-3">
-        {navigation.map((Route, i) => (
-          // <div>{Route.name}</div>
-          <NavLink
-            className={classNames(
-              Route.current ? "sidebar_link_active" : "",
-              "group flex items-center space-x-3.5 text-sm p-2 mr-5 hover:border-l hover:border-l-4 hover:border-l-sea-800 rounded-r-full sidebar_link font-sans font-medium"
-            )}
-            //  className="flex items-center space-x-3.5 text-sm p-2 mr-5 hover:bg-gray-500 hover:border-l rounded-r-full active:bg-purple-800 sidebar_link font-sans font-medium"
-            to={Route.path}
-            key={i}
-            aria-current="page"
-          >
-            <div
-              className="flex rounded-md ml-4 flex-shrink-0 sidebar_icon shadow-xl  w-6 h-6 items-center justify-center"
-              aria-hidden="true"
+        <div className="flex flex-col relative mt-4 space-y-3">
+          {navigation.map((Route, i) => (
+            // <div>{Route.name}</div>
+            <NavLink
+              onClick={Route.current}
+              className={({ isActive }) =>
+                isActive
+                  ? "sidebar_link_active group flex items-center space-x-3.5 text-sm p-2 mr-5 hover:border-l hover:border-l-4 hover:border-l-sea-800 rounded-r-full sidebar_link font-sans font-medium"
+                  : "group flex items-center space-x-3.5 text-sm p-2 mr-5 hover:border-l hover:border-l-4 hover:border-l-sea-800 rounded-r-full sidebar_link font-sans font-medium"
+              }
+              //  className="flex items-center space-x-3.5 text-sm p-2 mr-5 hover:bg-gray-500 hover:border-l rounded-r-full active:bg-purple-800 sidebar_link font-sans font-medium"
+              to={Route.path}
+              key={i}
+              aria-current="page"
             >
-              {Route.icon}
-            </div>
-            <div>{Route.name}</div>
-          </NavLink>
-        ))}
+              <div
+                className="flex rounded-md ml-4 flex-shrink-0 sidebar_icon shadow-xl  w-6 h-6 items-center justify-center"
+                aria-hidden="true"
+              >
+                {Route.icon}
+              </div>
+              <div>{Route.name}</div>
+            </NavLink>
+          ))}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 

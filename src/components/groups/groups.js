@@ -10,7 +10,7 @@ export default function Groups({ posts }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     if (e.target.id === "btn") {
-      navigate("/form");
+      navigate("AddGroup");
     }
   };
   return (
@@ -18,7 +18,7 @@ export default function Groups({ posts }) {
       <div className="flex flex-row ">
         <div className="flex w-full items-center justify-start">
           <h1 className="text-xl font-semibold text-gray-600">
-            Projects Record
+            Group Record
           </h1>
         </div>
         <div className="flex items-center justify-end mr-6">
@@ -46,7 +46,7 @@ export default function Groups({ posts }) {
       <div className="mt-8 flex flex-col">
         <div className="-my-2 ">
           <div className="  py-2 ">
-            <div className="overflow-y-scroll overflow-x-scroll h-80  w-[100%] shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+            <div className="overflow-y-scroll  h-80  w-[100%] shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-300">
                 <thead className="bg-gray-50 ">
                   <tr>
@@ -125,15 +125,15 @@ export default function Groups({ posts }) {
                   {posts
                     .filter(
                       (user) =>
-                        user.section.includes(query) ||
+                        user.section.toLowerCase().includes(query) ||
                         user.id.includes(query) ||
-                        user.name.includes(query) ||
-                        user.supervisor.includes(query) ||
-                        user.leader.includes(query) 
+                        user.toLowerCase().name.includes(query) ||
+                        user.toLowerCase().supervisor.includes(query) ||
+                        user.toLowerCase().leader.includes(query) 
                        
                     )
                     .map((person) => (
-                      <tr key={person.id}>
+                      <tr key={person.id} className="hover:bg-gray-100">
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.id}
                         </td>

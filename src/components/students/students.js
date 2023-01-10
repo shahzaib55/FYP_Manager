@@ -10,7 +10,7 @@ export default function Students({ posts }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     if (e.target.id === "btn") {
-      navigate("/form");
+      navigate("AddStudent");
     }
   };
   return (
@@ -18,7 +18,7 @@ export default function Students({ posts }) {
       <div className="flex flex-row ">
         <div className="flex w-full items-center justify-start">
           <h1 className="text-xl font-semibold text-gray-600">
-            Projects Record
+            Student Record
           </h1>
         </div>
         <div className="flex items-center justify-end mr-6">
@@ -118,14 +118,14 @@ export default function Students({ posts }) {
                   {posts
                     .filter(
                       (user) =>
-                        user.section.includes(query) ||
+                        user.toLowerCase().section.includes(query) ||
                         user.id.includes(query) ||
-                        user.name.includes(query) ||
-                        user.email.includes(query) 
+                        user.toLowerCase().name.includes(query) ||
+                        user.toLowerCase().email.includes(query) 
 
                     )
                     .map((person) => (
-                      <tr key={person.id}>
+                      <tr key={person.id} className="hover:bg-gray-100">
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.id}
                         </td>

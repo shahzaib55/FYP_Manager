@@ -9,7 +9,7 @@ export default function Supervisor({ posts }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     if (e.target.id === "btn") {
-      navigate("/form");
+      navigate("AddSupervisor");
     }
   };
   return (
@@ -43,9 +43,9 @@ export default function Supervisor({ posts }) {
         </div>
       </div>
       <div className="mt-8 flex flex-col">
-        <div className="-my-2 ">
-          <div className="  py-2 ">
-            <div className="overflow-y-scroll  h-80  w-[100%] shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
+        <div className="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div className="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+            <div className="overflow-y-scroll  h-80  min-w-full shadow ring-1 ring-black ring-opacity-5 md:rounded-lg">
               <table className="min-w-full divide-y divide-gray-300">
                 <thead className="bg-gray-50 ">
                   <tr>
@@ -102,26 +102,26 @@ export default function Supervisor({ posts }) {
                       (user) =>
                  
                         user.id.includes(query) ||
-                        user.name.includes(query) ||
+                        user.name.toLowerCase().includes(query) ||
                       
-                        user.email.includes(query) 
+                        user.email.toLowerCase().includes(query) 
                     
                     )
                     .map((person) => (
-                      <tr key={person.id}>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      <tr key={person.id} className="hover:bg-gray-100">
+                        <td className="md:text-center whitespace-nowrap  py-4 text-sm text-gray-500">
                           {person.id}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="md:text-left whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.name}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="md:text-left whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.email}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="md:text-left whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.groups}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <td className="md:text-left whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.contact}
                         </td>
                        

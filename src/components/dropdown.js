@@ -1,10 +1,18 @@
 import React from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
+import { useNavigate } from "react-router-dom";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 function Dropdown() {
+  const navigate = useNavigate();
+  
+  const handleClick = async (e) => {
+    e.preventDefault();
+    navigate("profile");
+  }
   return (
     <Menu as="div" className="relative ml-4 flex-shrink-0">
       <div>
@@ -30,7 +38,8 @@ function Dropdown() {
           <Menu.Item>
             {({ active }) => (
               <a
-                href="profile"
+                onClick={handleClick}
+                href=""
                 className={classNames(
                   active ? "bg-gray-100" : "",
                   "block px-4 py-2 text-sm text-gray-700"

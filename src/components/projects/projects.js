@@ -10,7 +10,7 @@ export default function Projects({ posts }) {
   const navigate = useNavigate();
   const handleClick = (e) => {
     if (e.target.id === "btn") {
-      navigate("/form");
+      navigate("AddProject");
     }
   };
   return (
@@ -136,15 +136,15 @@ export default function Projects({ posts }) {
                   {posts
                     .filter(
                       (user) =>
-                        user.section.includes(query) ||
+                        user.section.toLowerCase().includes(query) ||
                         user.id.includes(query) ||
-                        user.name.includes(query) ||
-                        user.supervisor.includes(query) ||
-                        user.email.includes(query) ||
-                        user.projectName.toLocaleLowerCase().includes(query)
+                        user.name.toLowerCase().includes(query) ||
+                        user.supervisor.toLowerCase().includes(query) ||
+                        user.email.toLowerCase().includes(query) ||
+                        user.projectName.toLowerCase().includes(query)
                     )
                     .map((person) => (
-                      <tr key={person.id}>
+                      <tr key={person.id} className="hover:bg-gray-100">
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                           {person.id}
                         </td>

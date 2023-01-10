@@ -11,6 +11,10 @@ import React from "react";
 import Login from "../pages/login";
 import Form from '../components/add/add_student'
 import Projects from '../components/projects/page'
+import AddStudent from "../components/add/add_student";
+import AddProject from "../components/add/add_project";
+import AddGroup from "../components/add/add_group";
+import AddSupervisor from "../components/add/add_supervisor";
 function MainRout() {
   return (
 
@@ -30,8 +34,8 @@ function MainRout() {
         <Route  path="/form" element={<Form />} /> */}
         <Route  path="/login" element={<Login />} />
 
-        <Route  index element={<Main />} />
-        <Route  path="/" element={<Main />} />
+        <Route  index path="/" element={<Main />} />
+        <Route  path="/main" element={<Main />} />
         <Route  path="projects" element={<Projects />} />
         <Route  path="supervisor" element={<Supervisor />} />
         <Route  path="groups" element={<Groups />} />
@@ -41,6 +45,13 @@ function MainRout() {
         <Route  path="profile" element={<Profile />} />
        
         <Route  path="form" element={<Form />} />
+        <Route  path="students/AddStudent" element={<AddStudent />} />
+        <Route  path="groups/AddGroup" element={<AddGroup/>} />
+        <Route  path="projects/AddProject" element={<AddProject />} />
+        <Route  path="students/AddSupervisor" element={<AddSupervisor />} />
+        {/* <Route  path="students/AddStudent" element={<AddStudent />} /> */}
+        
+        
 
         
 

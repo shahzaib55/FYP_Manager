@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { Button } from "bootstrap";
 import "../App.css";
 const navigation = [
-  { name: "Dashboard", path: "/", icon: <AiOutlineHome />, current: true },
+  { name: "Dashboard", path: "/dashboard/", icon: <AiOutlineHome />, current: true },
   {
     name: "Projects",
     path: "projects",

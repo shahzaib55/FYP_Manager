@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./cards";
+import { Table } from "./table";
 function MainBody() {
   return (
     <>
@@ -7,7 +8,9 @@ function MainBody() {
         <div>
           <Card />
         </div>
-        <div>table</div>
+        <div >
+          <Table />
+        </div>
       </div>
     </>
   );

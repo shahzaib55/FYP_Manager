@@ -3,6 +3,7 @@ import img from "../assets/images/logo.jpg";
 import "../App.css";
 import { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import BounceLoader from "react-spinners/BounceLoader";
 // import { AiOutlineEye,AiOutlineEyeInvisible } from "react-icons/ai";
 // import { useForm } from "react-hook-form";
 export default function Login() {
@@ -12,9 +13,17 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
+  const [loading,setloading] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     userRef.current.focus();
+        setloading(true)
+    setTimeout(()=>{
+      setloading(false)
+
+    }, 2500)
+
   }, []);
 
   useEffect(() => {
@@ -62,6 +71,20 @@ export default function Login() {
   //  }
   return (
     <>
+    {
+      loading ?
+      <div className="flex w-screen h-screen justify-center items-center">
+        <div>
+        <BounceLoader
+      color={'#d66198'}
+      loading={loading}
+      size={50}
+    />
+        </div>
+      
+    </div>
+      :
+
       <div class="bg flex flex-col md:items-end sm:items-center min-h-screen bg-black ">
         <div class="bg-white items-center min-h-screen shadow-3xl sm:w-[35rem] rounded-l-3xl">
           <div class="flex justify-center mt-10 ">
@@ -73,14 +96,6 @@ export default function Login() {
           <div class="flex justify-center mt-2 text-slate-500 font-medium  font-sans">
             <h1>To sign In please enter your email and password</h1>
           </div>
-          {/* {errMsg && (
-          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-          <strong class="font-bold">Holy smokes!</strong>
-          <span class="block sm:inline">Something seriously bad happened.</span>
-          <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
-          </span>
-        </div>)} */}
           <p
             ref={errRef}
             className={errMsg ? "errmsg text-red-500" : "offscreen"}
@@ -202,6 +217,10 @@ export default function Login() {
           </div>
         </div>
       </div>
+
+
+    }
+      
     </>
   );
 }

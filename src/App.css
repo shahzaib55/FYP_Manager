@@ -144,3 +144,8 @@ $strikemaster: #90547c; */
   background-color: #a16ba6;
   border: #905999;
 }
+.card:hover{
+  background-color: #a16ba6;
+
+
+}

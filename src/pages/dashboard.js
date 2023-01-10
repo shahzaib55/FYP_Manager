@@ -3,10 +3,13 @@ import Sidebar from "../components/sidebar";
 import Header from "../components/header";
 import MainRout from "../Routes/mainRoute";
 import Breadcrumb from "../components/breadcrumbs";
+
 import "../App.css";
 export default function Dashboard() {
+
   return (
-    <React.Fragment>
+    <>
+      
       <div className="flex h-screen bg-gray-100 ">
         <sidebar className="h-screen  w-[18%] sidebar_bg stick">
           <Sidebar />
@@ -21,6 +24,7 @@ export default function Dashboard() {
           </main>
         </div>
       </div>
-    </React.Fragment>
+
+    </>
   );
 }

@@ -15,6 +15,7 @@ import AddStudent from "../components/add/add_student";
 import AddProject from "../components/add/add_project";
 import AddGroup from "../components/add/add_group";
 import AddSupervisor from "../components/add/add_supervisor";
+import ShowTask from "../components/assignment/page";
 function MainRout() {
   return (
 
@@ -40,15 +41,17 @@ function MainRout() {
         <Route  path="supervisor" element={<Supervisor />} />
         <Route  path="groups" element={<Groups />} />
         <Route  path="students" element={<Students />} />
-        <Route  path="Taks" element={<Tasks />} />
+        <Route  path="tasks" element={<Tasks />} />
         <Route  path="announcement" element={<Announcement />} />
         <Route  path="profile" element={<Profile />} />
+        <Route  path="Assignment" element={<ShowTask />} />
        
         <Route  path="form" element={<Form />} />
         <Route  path="students/AddStudent" element={<AddStudent />} />
         <Route  path="groups/AddGroup" element={<AddGroup/>} />
         <Route  path="projects/AddProject" element={<AddProject />} />
-        <Route  path="students/AddSupervisor" element={<AddSupervisor />} />
+        <Route  path="supervisor/AddSupervisor" element={<AddSupervisor />} />
+        
         {/* <Route  path="students/AddStudent" element={<AddStudent />} /> */}
         
         

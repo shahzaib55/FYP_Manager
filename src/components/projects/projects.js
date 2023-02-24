@@ -29,7 +29,7 @@ export default function Projects({ posts }) {
               type="text"
               autoComplete=""
               onChange={(e) => setQuery(e.target.value)}
-              className="border border-gray-300 rounded-md focus:outline-none focus:ring-0 ring-0 w-full  mr-2 text-gray-600 "
+              className="border h-9 border-gray-300 rounded-md focus:outline-none focus:ring-0 ring-0 w-full  mr-2 text-gray-600 shadow-md"
               placeholder="Search..."
             />
           </div>

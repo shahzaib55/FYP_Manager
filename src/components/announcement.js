@@ -54,11 +54,12 @@ function Announcement() {
                   </div>
                 </div>
                 <button
-                  type="submit"
-                  className=" flex justify-right py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Submit
-                </button>
+                    id="btn"
+                    // onClick={handleClick}
+                    className="bg-indigo-500 btn items-center rounded-md border border-transparent  px-12 py-1 text-base font-medium text-sm text-white shadow-md  focus:outline-none ring-0 "
+                  >
+                    Submit
+                  </button>
               </div>
             </form>
           </div>

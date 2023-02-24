@@ -5,12 +5,12 @@ import { BiEdit } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import Pagination from "./pagination";
 
-export default function Students({ posts }) {
+export default function Assignment({ posts }) {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const handleClick = (e) => {
     if (e.target.id === "btn") {
-      navigate("AddStudent");
+      navigate("tasks");
     }
   };
   return (
@@ -18,7 +18,7 @@ export default function Students({ posts }) {
       <div className="flex flex-row ">
         <div className="flex w-full items-center justify-start">
           <h1 className="text-xl font-semibold text-gray-600">
-            Student Record
+            Assignment Record
           </h1>
         </div>
         <div className="flex items-center justify-end mr-6">
@@ -60,45 +60,28 @@ export default function Students({ posts }) {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Name
+                      Title
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Role No
+                      Open Date
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Email
+                      Due Date
                     </th>
 
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Section
+                      Description
                     </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Group
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Company
-                    </th>
-                    <th
-                      scope="col"
-                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-                    >
-                      Contact
-                    </th>
+                  
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
@@ -118,11 +101,8 @@ export default function Students({ posts }) {
                   {posts
                     .filter(
                       (user) =>
-                        user.section.toLowerCase().includes(query) ||
-                        user.id.includes(query) ||
-                        user.toLowerCase().name.includes(query) ||
-                        user.toLowerCase().email.includes(query) 
-
+                        user.toLowerCase().title.includes(query) ||
+                        user.id.includes(query)
                     )
                     .map((person) => (
                       <tr key={person.id} className="hover:bg-gray-100">
@@ -130,26 +110,18 @@ export default function Students({ posts }) {
                           {person.id}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.name}
+                          {person.title}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.rollNo}
+                          {person.openDate}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.email}
+                          {person.dueDate}
                         </td>
                         <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.section}
+                          {person.description}
                         </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.group}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.company}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {person.contact}
-                        </td>
+                       
                        
 
                         <td className="relative text-gray-500 whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">

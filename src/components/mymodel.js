@@ -94,7 +94,7 @@ function Mymodel({ visible, onClose }) {
             <div className="flex mt-1">
               <input
                 value="030000000"
-                type="number"
+                type="text"
                 name="mobile"
                 id="mobile"
                 className="block text-gray-500 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"

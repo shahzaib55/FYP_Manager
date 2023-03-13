@@ -9,7 +9,6 @@ function Announcement() {
             Anouncement Form
           </h2>
         </div>
-
         <div className="mt-8 ml-64 sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4  sm:rounded-lg sm:px-10 shadow-lg">
             <form className="flex flex-col">
@@ -54,12 +53,12 @@ function Announcement() {
                   </div>
                 </div>
                 <button
-                    id="btn"
-                    // onClick={handleClick}
-                    className="bg-indigo-500 btn items-center rounded-md border border-transparent  px-12 py-1 text-base font-medium text-sm text-white shadow-md  focus:outline-none ring-0 "
-                  >
-                    Submit
-                  </button>
+                  id="btn"
+                  // onClick={handleClick}
+                  className="bg-indigo-500 btn items-center rounded-md border border-transparent  px-12 py-1 text-base font-medium text-sm text-white shadow-md  focus:outline-none ring-0 "
+                >
+                  Submit
+                </button>
               </div>
             </form>
           </div>

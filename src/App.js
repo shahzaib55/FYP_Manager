@@ -12,12 +12,14 @@ import Task from "./components/task";
 import Announcement from "./components/announcement";
 import Profile from "./components/profile";
 import Form from "./components/add/add_project";
+import Otp from "./components/otp";
 function App() {
   return (
     <div className="App">
       <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/login/verify" element={<Otp />} />
           <Route path="/dashboard/*" element={<Dashboard />}>
           <Route path="dashboard/main" element={<MainBody />} />
           <Route path="dashboard/dashboard" element={<MainBody />} />
